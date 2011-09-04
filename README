@@ -1,0 +1,26 @@
+This plugin allows you to over-ride the default browser alert() implementation so that you can style it however you want.
+
+Usage:
+Include the plugin JS and CSS files in your page. Change the location of the modal-1px.png graphic in your CSS file if necessary (default: modal-1px.png). Call the following on your page:
+
+$().customAlert({
+    alertTitle : 'Notice!',
+    alertOk	 : 'OK',
+    draggable	 : false
+});
+
+Options:
+	alertTitle: The title shown in the alert box,
+	alertOk: OK button text,
+	draggable: Set to true to make the alert box draggable (you will need jQuery UI for this to work)
+
+If you need to use the default browser alert then call defaultAlert().
+
+Let me know if you have any problems!
+
+-------------------------------------------
+
+Arron Bailiss
+http://www.arronbailiss.com
+
+Based on John Sutherland's jQuery shift-click plugin (http://plugins.jquery.com/files/jquery.shiftclick.js_0.txt)

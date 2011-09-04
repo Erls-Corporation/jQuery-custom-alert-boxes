@@ -1,0 +1,48 @@
+#modalDiv {
+	background-image: url(modal-1px.png);
+	background-color: #000;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+#alertDiv {
+	position: fixed;
+	width: 18em;
+	min-height: 4em;
+	border: 2px solid black;
+	background-color: #F2F5F6;
+	color: #000;
+	z-index: 10001;
+}
+#alertDiv .titleH1 {
+	margin: 0;
+	font-size: 0.9em;
+	font-weight: bold;
+	background-color: #78919B;
+	color: white;
+	border-bottom: 1px solid black;
+	padding: 0.2em 0 0.2em 0.5em;
+}
+#alertDiv p {
+	padding: 1em;
+}
+#alertDiv .okBtn {
+	display: block;
+	position: relative;
+	margin: 1em auto;
+	width: 6em;
+	padding: 0.3em;
+	border: 2px solid black;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	background-color: #78919B;
+	text-decoration: none;
+}

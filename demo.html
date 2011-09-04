@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title>Custom styling for native alert() function | Arron Bailiss</title>
+		<link type="text/css" rel="stylesheet" href="jquery.custom.alerts.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="jquery.custom.alerts.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$().customAlert();
+				$('#alertLink').click(function(e) {
+					alert('Style your alert boxes without any browser restrictions!');
+					e.preventDefault();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<a href="#" id="alertLink">Show me a custom alert!</a>
+	</body>
+</html>
