@@ -7,8 +7,6 @@ $().customAlert({
     alertOk	 : 'OK',
     draggable	 : false
 });
-
-After that call:
 alert('Alert title', 'Alert message!');
 
 Options:
