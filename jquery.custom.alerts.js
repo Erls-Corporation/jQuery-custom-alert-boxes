@@ -19,7 +19,6 @@
 (function($) {
 	$.fn.customAlert = function(options) {
 		var settings = {
-			'alertTitle' : 'Notice!',
 			'alertOk'	 : 'OK',
 			'draggable'	 : false
 		};
@@ -28,8 +27,8 @@
 		
 		if(document.getElementById) {
 			window.defaultAlert = window.alert; // Call defaultAlert() to use the standard alert() behavior
-			window.alert = function(msgTxt) {
-				if ($('#modalDiv').length > 0) return; // Only ever show one alert
+			window.alert = function(alertTitle, msgTxt) {
+				if ($('#modalDiv').length > 0 || alertTitle === undefined || msgTxt === undefined) return; // Only ever show one alert and ensure the required parameters have been passed
 				
 				// The modal div to block out the rest of the document whilst the alert is shown
 				var modalDiv = $('<div></div>').attr('id', 'modalDiv')
@@ -40,7 +39,7 @@
 				
 				// The alert title
 				var title = $('<div></div>').addClass('title')
-					.html(settings.alertTitle);
+					.html(alertTitle);
 				
 				// The alert text to display
 				var msg = $('<div></div>').addClass('message')

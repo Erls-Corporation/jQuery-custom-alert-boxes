@@ -4,13 +4,14 @@ Usage:
 Include the plugin JS and CSS files in your page. Change the location of the modal-1px.png graphic in your CSS file if necessary (default: modal-1px.png). Call the following on your page:
 
 $().customAlert({
-    alertTitle : 'Notice!',
     alertOk	 : 'OK',
     draggable	 : false
 });
 
+After that call:
+alert('Alert title', 'Alert message!');
+
 Options:
-	alertTitle: The title shown in the alert box (HTML allowed),
 	alertOk: OK button text,
 	draggable: Set to true to make the alert box draggable (you will need jQuery UI for this to work)
 
