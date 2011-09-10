@@ -39,11 +39,12 @@
 				var alertDiv = $('<div></div>').attr('id', 'alertDiv');
 				
 				// The alert title
-				var titleH1 = $('<h1></h1>').addClass('titleH1')
-					.text(settings.alertTitle);
+				var title = $('<div></div>').addClass('title')
+					.html(settings.alertTitle);
 				
 				// The alert text to display
-				var msgP = $('<p></p>').text(msgTxt);
+				var msg = $('<div></div>').addClass('message')
+					.html(msgTxt);
 				
 				// OK button - will remove/close the alert on click
 				var okBtn = $('<a></a>').addClass('okBtn')
@@ -51,8 +52,8 @@
 					.attr('href', '#');
 				
 				// Append elements to document body
-				alertDiv.append(titleH1)
-					.append(msgP)
+				alertDiv.append(title)
+					.append(msg)
 					.append(okBtn);
 				$('body').append(modalDiv)
 					.append(alertDiv);
@@ -66,10 +67,10 @@
 				// Make draggable
 				if (settings.draggable && $('#alertDiv').draggable) {
 					$('#alertDiv').draggable({
-						handle: 'h1',
+						handle: '.title',
 						opacity: 0.4
 					});
-					$('#alertDiv h1').css('cursor', 'move');
+					$('#alertDiv .title').css('cursor', 'move');
 				}
 				
 				// Bind OK button to remove/close alert
@@ -78,6 +79,7 @@
 					e.preventDefault();
 				});
 				
+				// Bind enter key to trigger remove/close alert
 				$(window).keydown(function(e) {
 					if (e.keyCode == '13') {
 						$('#alertDiv .okBtn').click();

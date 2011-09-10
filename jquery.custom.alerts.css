@@ -20,7 +20,7 @@
 	color: #000;
 	z-index: 10001;
 }
-#alertDiv .titleH1 {
+#alertDiv .title {
 	margin: 0;
 	font-size: 0.9em;
 	font-weight: bold;
@@ -29,13 +29,13 @@
 	border-bottom: 1px solid black;
 	padding: 0.2em 0 0.2em 0.5em;
 }
-#alertDiv p {
-	padding: 1em;
+#alertDiv .message {
+	padding: 0 1em;
 }
 #alertDiv .okBtn {
 	display: block;
 	position: relative;
-	margin: 1em auto;
+	margin: 0 auto 1em auto;
 	width: 6em;
 	padding: 0.3em;
 	border: 2px solid black;
