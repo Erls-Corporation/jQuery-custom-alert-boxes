@@ -19,34 +19,34 @@
 (function($) {
 	$.fn.customAlert = function(options) {
 		var settings = {
-			'alertOk'	 : 'OK',
-			'draggable'	 : false
+			'alertOk'   : 'OK',
+			'draggable' : false
 		};
 		
 		if (options) $.extend(settings, options);
 		
-		if(document.getElementById) {
+		if (document.getElementById) {
 			window.defaultAlert = window.alert; // Call defaultAlert() to use the standard alert() behavior
 			window.alert = function(alertTitle, msgTxt) {
 				if ($('#modalDiv').length > 0 || alertTitle === undefined || msgTxt === undefined) return; // Only ever show one alert and ensure the required parameters have been passed
 				
 				// The modal div to block out the rest of the document whilst the alert is shown
-				var modalDiv = $('<div></div>').attr('id', 'modalDiv')
+				var modalDiv = $('<div>').attr('id', 'modalDiv')
 					.height($(document).height()); // Make overlay cover the whole window
 				
 				// The alert container
-				var alertDiv = $('<div></div>').attr('id', 'alertDiv');
+				var alertDiv = $('<div>').attr('id', 'alertDiv');
 				
 				// The alert title
-				var title = $('<div></div>').addClass('title')
+				var title = $('<div>').addClass('title')
 					.html(alertTitle);
 				
 				// The alert text to display
-				var msg = $('<div></div>').addClass('message')
+				var msg = $('<div>').addClass('message')
 					.html(msgTxt);
 				
 				// OK button - will remove/close the alert on click
-				var okBtn = $('<a></a>').addClass('okBtn')
+				var okBtn = $('<a>').addClass('okBtn')
 					.text(settings.alertOk)
 					.attr('href', '#');
 				
@@ -59,23 +59,23 @@
 				
 				// Center alert on page
 				$('#alertDiv').css({
-					top: ($(window).height()/2) - ($('#alertDiv').height()/2)+'px',
+					top : ($(window).height()/2) - ($('#alertDiv').height()/2)+'px',
 					left: ($(window).width()/2) - ($('#alertDiv').width()/2)+'px'
 				});
 				
 				// Make draggable
 				if (settings.draggable && $('#alertDiv').draggable) {
 					$('#alertDiv').draggable({
-						handle: '.title',
-						opacity: 0.4
+						handle	: '.title',
+						opacity	: .4
 					});
 					$('#alertDiv .title').css('cursor', 'move');
 				}
 				
 				// Bind OK button to remove/close alert
-				$('#alertDiv .okBtn').bind('click', function(e) {
-					$('#alertDiv, #modalDiv').remove();
+				$('#alertDiv .okBtn').click(function(e) {
 					e.preventDefault();
+					$('#alertDiv, #modalDiv').remove();
 				});
 				
 				// Bind enter key to trigger remove/close alert
